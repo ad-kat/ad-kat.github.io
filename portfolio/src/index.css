@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- theme tokens ---- */
+/* light: pale lavender canvas, deep plum text. dark: deep purple canvas (never black), soft lavender text. */
+:root {
+  --c-canvas: 250 247 253;
+  --c-panel: 242 233 250;
+  --c-panel2: 235 221 247;
+  --c-line: 222 199 240;
+  --c-ink: 43 26 56;
+  --c-mute: 122 102 143;
+  --c-violet: 124 58 224;
+  --c-pink: 196 48 134;
+  --c-plum: 138 47 168;
+
+  --c-grid-line: 232 219 245;
+  --c-selection-bg: 196 165 252;
+}
+
+.dark {
+  --c-canvas: 26 15 46;
+  --c-panel: 41 26 66;
+  --c-panel2: 53 35 84;
+  --c-line: 75 52 112;
+  --c-ink: 240 232 250;
+  --c-mute: 184 164 206;
+  --c-violet: 196 165 252;
+  --c-pink: 242 168 214;
+  --c-plum: 203 147 232;
+
+  --c-grid-line: 53 35 84;
+  --c-selection-bg: 124 58 224;
+}
+
+::selection {
+  background: rgb(var(--c-selection-bg));
+  color: rgb(var(--c-canvas));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: rgb(var(--c-canvas));
+  color: rgb(var(--c-ink));
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--c-canvas));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--c-line));
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--c-mute));
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(var(--c-grid-line)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--c-grid-line)) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgb(var(--c-violet));
+  outline-offset: 2px;
+}
