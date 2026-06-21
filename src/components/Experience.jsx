@@ -8,7 +8,7 @@ export default function Experience() {
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-mono text-xs uppercase tracking-widest text-pink"
+        className="font-mono text-xs uppercase tracking-widest text-violet"
       >
         work
       </motion.p>

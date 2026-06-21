@@ -3,17 +3,23 @@
 @tailwind utilities;
 
 /* ---- theme tokens ---- */
-/* light: pale lavender canvas, deep plum text. dark: deep purple canvas (never black), soft lavender text. */
+/* light: pale lavender canvas, deep plum text, strong borders for contrast.
+   dark: deep purple canvas (never black), soft lavender text. five accent
+   hues across the violet -> orchid -> pink -> plum -> lilac range — no
+   orange, no maroon, no blue. */
 :root {
   --c-canvas: 250 247 253;
-  --c-panel: 242 233 250;
-  --c-panel2: 235 221 247;
-  --c-line: 222 199 240;
+  --c-panel: 243 234 251;
+  --c-panel2: 234 217 247;
+  --c-line: 209 175 235;
   --c-ink: 43 26 56;
-  --c-mute: 122 102 143;
+  --c-mute: 100 80 122;
+
   --c-violet: 124 58 224;
-  --c-pink: 196 48 134;
-  --c-plum: 138 47 168;
+  --c-orchid: 166 70 196;
+  --c-pink: 214 84 156;
+  --c-plum: 107 63 140;
+  --c-lilac: 130 96 196;
 
   --c-grid-line: 232 219 245;
   --c-selection-bg: 196 165 252;
@@ -21,16 +27,19 @@
 
 .dark {
   --c-canvas: 26 15 46;
-  --c-panel: 41 26 66;
-  --c-panel2: 53 35 84;
-  --c-line: 75 52 112;
-  --c-ink: 240 232 250;
-  --c-mute: 184 164 206;
-  --c-violet: 196 165 252;
-  --c-pink: 242 168 214;
-  --c-plum: 203 147 232;
+  --c-panel: 45 28 73;
+  --c-panel2: 58 36 89;
+  --c-line: 96 66 142;
+  --c-ink: 243 234 251;
+  --c-mute: 195 170 217;
 
-  --c-grid-line: 53 35 84;
+  --c-violet: 196 165 252;
+  --c-orchid: 224 166 242;
+  --c-pink: 242 168 214;
+  --c-plum: 198 152 224;
+  --c-lilac: 180 154 232;
+
+  --c-grid-line: 58 36 89;
   --c-selection-bg: 124 58 224;
 }
 
@@ -82,6 +91,13 @@ body {
     linear-gradient(to right, rgb(var(--c-grid-line)) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(var(--c-grid-line)) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+.text-gradient {
+  background-image: linear-gradient(90deg, rgb(var(--c-violet)), rgb(var(--c-orchid)) 55%, rgb(var(--c-pink)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 a:focus-visible,

@@ -1,5 +1,4 @@
 import { profile } from '../data/data.js'
-import StatusLine from './StatusLine.jsx'
 
 export default function Footer() {
   return (
@@ -19,7 +18,7 @@ export default function Footer() {
             href={`mailto:${profile.email}`}
             className="rounded-md bg-violet px-5 py-2.5 font-mono text-sm font-medium text-canvas"
           >
-            {profile.email}
+            gmail
           </a>
           <a
             href={profile.linkedin}
@@ -53,13 +52,6 @@ export default function Footer() {
           >
             researchgate
           </a>
-        </div>
-
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-line pt-6 font-mono text-xs text-mute sm:flex-row sm:items-center">
-          <p>
-            adri@katyayan:~$ echo "{profile.location}"
-          </p>
-          <StatusLine text="last updated · this build" tone="pink" />
         </div>
       </div>
     </footer>

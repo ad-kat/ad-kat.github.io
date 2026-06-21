@@ -6,7 +6,7 @@ const tagStyle = {
   'AI/ML': 'border-violet/40 text-violet',
   Systems: 'border-pink/40 text-pink',
   Health: 'border-plum/40 text-plum',
-  Web: 'border-mute/40 text-mute',
+  Web: 'border-orchid/40 text-orchid',
 }
 
 export default function Projects() {
@@ -19,7 +19,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
-      <p className="font-mono text-xs uppercase tracking-widest text-pink">selected work</p>
+      <p className="font-mono text-xs uppercase tracking-widest text-orchid">selected work</p>
       <h2 className="mt-2 font-display text-3xl font-semibold text-ink sm:text-4xl">Projects</h2>
 
       <div className="mt-6 flex flex-wrap gap-2">
@@ -48,11 +48,11 @@ export default function Projects() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.3 }}
-              className="group rounded-lg border border-line bg-panel p-6 transition-colors hover:border-violet/50"
+              className="group rounded-lg border border-line bg-panel p-6 transition-colors hover:border-orchid/50"
             >
               <div className="flex items-start justify-between gap-3">
                 <h3 className="font-display text-lg font-medium text-ink">{p.title}</h3>
-                <span className="shrink-0 rounded-md border border-line bg-panel2 px-2 py-1 font-mono text-[10px] text-violet">
+                <span className="shrink-0 rounded-md border border-line bg-panel2 px-2 py-1 font-mono text-[10px] text-orchid">
                   {p.metric}
                 </span>
               </div>

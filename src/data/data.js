@@ -2,7 +2,7 @@ export const profile = {
   name: 'Adri Katyayan',
   role: 'MS CS @ Stony Brook University',
   tagline: 'AI/ML systems, distributed infra, and clinical NLP — built and shipped, not just studied.',
-  email: 'adri.katyayan@stonybrook.edu',
+  email: 'katyayanadri02@gmail.com',
   phone: '+1 (551) 312-9658',
   linkedin: 'https://www.linkedin.com/in/adri-katyayan-21a0b2222/',
   github: 'https://github.com/ad-kat',

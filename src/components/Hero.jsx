@@ -26,7 +26,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.5 }}
-          className="font-display text-5xl font-semibold leading-[1.05] text-ink sm:text-7xl"
+          className="font-display text-5xl font-semibold leading-[1.05] text-gradient sm:text-7xl"
         >
           {profile.name}
         </motion.h1>

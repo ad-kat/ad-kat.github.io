@@ -48,7 +48,8 @@ export default function Nav() {
           <ThemeToggle />
           <a
             href="/resume.pdf"
-            download
+            target="_blank"
+            rel="noreferrer"
             className="rounded-md border border-line bg-panel px-3 py-1.5 font-mono text-xs text-ink transition-colors hover:border-violet hover:text-violet"
           >
             resume.pdf

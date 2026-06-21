@@ -12,8 +12,10 @@ export default {
         ink: 'rgb(var(--c-ink) / <alpha-value>)',
         mute: 'rgb(var(--c-mute) / <alpha-value>)',
         violet: 'rgb(var(--c-violet) / <alpha-value>)',
+        orchid: 'rgb(var(--c-orchid) / <alpha-value>)',
         pink: 'rgb(var(--c-pink) / <alpha-value>)',
         plum: 'rgb(var(--c-plum) / <alpha-value>)',
+        lilac: 'rgb(var(--c-lilac) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],
