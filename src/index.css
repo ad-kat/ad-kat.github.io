@@ -8,15 +8,15 @@
    hues across the violet -> orchid -> pink -> plum -> lilac range — no
    orange, no maroon, no blue. */
 :root {
-  --c-canvas: 250 247 253;
-  --c-panel: 243 234 251;
-  --c-panel2: 234 217 247;
-  --c-line: 209 175 235;
-  --c-ink: 43 26 56;
-  --c-mute: 100 80 122;
+  --c-canvas: 248 248 240; 
+  --c-panel: 190 229 176;
+  --c-panel2: 250 245 164;
+  --c-line: 36 22 58;
+  --c-ink: 70 20 130;
+  --c-mute: 36 22 58;
 
-  --c-violet: 124 58 224;
-  --c-orchid: 166 70 196;
+  --c-violet: 36 22 58;
+  --c-orchid: 102 51 102;
   --c-pink: 214 84 156;
   --c-plum: 107 63 140;
   --c-lilac: 130 96 196;

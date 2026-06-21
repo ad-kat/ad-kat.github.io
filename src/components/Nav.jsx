@@ -28,9 +28,7 @@ export default function Nav() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-2 font-mono text-sm text-ink" onClick={() => setOpen(false)}>
-          <span className="flex h-7 w-7 items-center justify-center rounded-md border border-line bg-panel text-pink">
-            A
-          </span>
+          <img src="/crest.png" alt="" className="h-8 w-8 object-contain" />
           <span className="hidden sm:inline text-mute">adri-katyayan</span>
         </a>
 

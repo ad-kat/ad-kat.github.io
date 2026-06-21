@@ -33,19 +33,8 @@ To swap the downloadable resume, replace `public/resume.pdf` with your own file 
 5. Optional: add a custom domain later in Project Settings → Domains (domain itself costs ~$10/yr,
    Vercel hosting stays free).
 
-## Deploy free — GitHub Pages (alternative)
 
-1. `npm install -D gh-pages`
-2. In `package.json` add: `"homepage": "https://<your-username>.github.io/portfolio"` and a script:
-   `"deploy": "vite build && gh-pages -d dist"`
-3. In `vite.config.js` set `base: '/portfolio/'`.
-4. Run `npm run deploy`. Site goes live at the homepage URL above in a few minutes.
-
-## Put it on LinkedIn
-
-LinkedIn profile → **Featured** section → **Add → Link**. Paste your live Vercel/GitHub Pages URL directly —
-no PDF upload needed, LinkedIn auto-generates a preview card from the page.
-
+## Put it on LinkedIn- https://portfolio-mu-silk-33.vercel.app/
 ## Stack
 
 - React 18 + Vite
