@@ -4,20 +4,12 @@ export const profile = {
   tagline: 'AI/ML systems, distributed infra, and clinical NLP... Built and shipped, not just studied.',
   email: 'adri.katyayan@stonybrook.edu',
   phone: '+1 (551) 312-9658',
-  linkedin: 'https://www.linkedin.com/in/adri-katyayan-21a0b2222/',
+  linkedin: 'https://www.linkedin.com/in/adri-katyayan/',
   github: 'https://github.com/ad-kat',
   orcid: 'https://orcid.org/0009-0004-9070-3902',
   researchgate: 'https://www.researchgate.net/profile/Adri-Katyayan?ev=hdr_xprf',
   location: 'Stony Brook, NY',
 }
-
-export const bootLines = [
-  '> initializing profile :: Adri Katyayan',
-  '> Intern experience :: [DevRev, Rystad Energy, IIT Kanpur, Technosys Pvt. Ltd., Arth.ai, KGMU]',
-  '> indexing 8 shipped projects',
-  '> compiling 4 publications',
-  '> interests: ai infra, ml systems, Software and Backend engineering',
-]
 
 export const education = [
   {
@@ -41,10 +33,12 @@ export const experience = [
     location: 'Palo Alto, CA',
     period: 'Jun 2026 - Present',
     bullets: [
-      'Built the "thinking" status system for Kilmer (AI negotiation-advisor agent): a latency-aware state machine spanning request dispatch, tool-call silences, and token streaming.',
-      'Shipped an end-to-end bug-reporting pipeline wired into DevRev\u2019s own ticketing API, with session-tagged traces for replaying agent runs.',
-      'Implemented real-time speech-to-text (Deepgram Nova-2 streaming) feeding live transcripts directly into the chat input.',
-    ],
+    'Built the latency-aware thinking-state system for Kilmer (AI negotiation-advisor agent in active beta): a state machine spanning request dispatch, tool-call silences, and token streaming, ensuring accurate real-time UI feedback under variable LLM response patterns.',
+    'Shipped an end-to-end bug-reporting pipeline wired into DevRev\u2019s own ticketing API, with session-tagged traces and presigned artifact upload for replaying agent runs across environments.',
+    'Implemented real-time speech-to-text (WebSocket streaming with server-minted short-lived auth tokens) feeding live transcripts directly into the agent, enabling full voice-conversation mode with Kilmer.',
+    'Engineered a guardrail audit snap-in scanning 500+ conversations per run for system-prompt leaks using batched parallel LLM calls with exponential-backoff retry.',
+    'Migrating Kilmer to a new agent runtime to improve document-generation quality; conducting early research on exposing Kilmer as an MCP agent for integration with external tools and workflows.',
+  ],
   },
   {
     company: 'Stony Brook University',
@@ -128,6 +122,7 @@ export const projects = [
     stack: 'Python · DistilBERT · Groq/Llama · FastAPI · PostgreSQL',
     metric: '140× faster inference',
     period: 'Mar - May 2026',
+    github: 'https://github.com/ad-kat/clinical-contradiction-detector',
     bullets: [
       'Clinical NLP system detecting cross-encounter inconsistencies in MIMIC-IV EHR data (145,914 patients, 331,793 notes) under PhysioNet credentialed access.',
       'Knowledge distillation: rule-labeled teacher → fine-tuned DistilBERT student, F1=0.731 at 7ms inference.',
@@ -140,6 +135,7 @@ export const projects = [
     stack: 'C++20 · Python · FastAPI · React · WebSockets',
     metric: '1.9M ops/sec',
     period: 'Dec 2025',
+    github: 'https://github.com/ad-kat/Limit-order-book-and-Matching-engine',
     bullets: [
       'Price-time priority matching engine: ~1.9M ops/sec, sub-microsecond latency (p50=0.4µs, p95=0.9µs).',
       'Live NASDAQ tick feed bridged via FastAPI into the C++ engine, broadcast over WebSocket.',
@@ -152,6 +148,7 @@ export const projects = [
     stack: 'Python · Rust · Mininet · Linux Kernel C',
     metric: '27-config sweep grid',
     period: 'Feb - May 2026',
+    github: 'https://github.com/ad-kat/BBR-congestion-control-study',
     bullets: [
       'Rust CLI orchestrating reproducible Mininet experiments characterizing BBR\u2019s short-flow latency penalty, extending Cao et al. (IMC 2019).',
       'Two-level tc qdisc stack (HTB + netem) for bandwidth, delay, and buffer enforcement.',
@@ -164,6 +161,7 @@ export const projects = [
     stack: 'Python · FastAPI · PostgreSQL · Docker · APScheduler',
     metric: '5-min policy cycle',
     period: 'Mar - May 2026',
+    github: 'https://github.com/ad-kat/cloud-resource-manager',
     bullets: [
       'Cloud governance REST API modeling the full resource lifecycle - provisioning, policy enforcement, drift detection - mirroring AWS Config patterns.',
       'Background engine auto-stops TTL-breached resources and writes an append-only audit trail every 5 minutes.',
@@ -171,21 +169,11 @@ export const projects = [
     ],
   },
   {
-    title: 'Community Ear Diagnosis via AI/ML',
-    tags: ['AI/ML', 'Health'],
-    stack: 'Python · VGG19 · Inception-Net-v4 · CNN',
-    metric: '4 papers published',
-    period: '2021 - 2023',
-    bullets: [
-      'Published research benchmarking 3 CNN architectures on clinical ear-drum images, 85% training accuracy.',
-      'Published research validating a smartphone hearing-assessment app against gold-standard PTA across 44 patients.',
-    ],
-  },
-  {
     title: 'LaughLab',
     tags: ['AI/ML'],
     stack: 'Python · Whisper · YAMNet · Groq/LLaMA · FastAPI',
     metric: '20-bin laugh heatmaps',
+    github: 'https://github.com/ad-kat/standup-visualization-research',
     period: 'Jan 2026 - Present',
     bullets: [
       'Audio/NLP pipeline for stand-up comedy: laugh-event detection, ASR transcription, sentiment on setups.',
@@ -198,6 +186,7 @@ export const projects = [
     stack: 'JavaScript · HTML5 Canvas · Chrome Extensions',
     metric: '$1 gesture recognizer',
     period: 'Aug - Dec 2025',
+    github: 'https://github.com/ad-kat/Gesture-Browser-Shortcuts',
     bullets: [
       'Manifest V3 Chrome extension mapping drawn gestures to browser actions via a $1-style recognizer.',
       'Real-time HUD (similarity score, latency, accuracy); usability-tested including a motor-impaired user.',
@@ -209,6 +198,7 @@ export const projects = [
     stack: 'Java 21 · OpenStreetMap · StAX · REST',
     metric: '97% fewer nodes (A*)',
     period: 'Apr - May 2026',
+    github: 'https://github.com/ad-kat/osm-routing-engine',
     bullets: [
       'Graph routing engine parsing OSM XML via StAX streaming into a spatial-indexed road graph (228 nodes, 849 edges).',
       'A* explored 97% fewer nodes than Dijkstra on cross-city routes while guaranteeing identical shortest paths.',
@@ -217,6 +207,14 @@ export const projects = [
 ]
 
 export const publications = [
+  {
+    title: 'Does customized smartphone application perform better than advanced hearing aids? A pilot study',
+    venue: 'Indian Journal of Otolaryngology and Head & Neck Surgery (Springer)',
+    date: 'Jun 2026',
+    doi: 'https://doi.org/10.1007/s12070-026-06705-3',
+    summary:
+      'Prospective pilot study (42 patients) comparing a smartphone hearing-amplification app against premium digital hearing aids. App demonstrated statistically significant superior performance across nearly all satisfaction parameters (p<0.001), with 75% of participants rating it superior to their existing HA. Establishes a sub-$5 scalable alternative to devices costing up to $10,000.',
+  },
   {
     title: 'Augmenting Community Diagnosis of Safe Ear Disease Through Tele-Myringoscopy with Borescope Using AI/ML Techniques',
     venue: 'Indian Journal of Otolaryngology and Head & Neck Surgery (Springer)',
@@ -254,27 +252,27 @@ export const publications = [
 export const skillGroups = [
   {
     label: 'Languages',
-    items: ['C', 'C++', 'Python', 'Java', 'Rust', 'SQL', 'JavaScript', 'TypeScript', 'Kotlin', 'C#'],
+    items: ['Python', 'C++', 'Java', 'Rust', 'SQL', 'TypeScript', 'JavaScript', 'Kotlin'],
   },
   {
     label: 'Backend & Systems',
-    items: ['FastAPI', 'Flask', 'ASP.NET MVC', 'PostgreSQL', 'MySQL', 'SQLite', 'SQLAlchemy', 'TCP/IP', 'Multithreading'],
+    items: ['FastAPI', 'Flask', 'PostgreSQL', 'MySQL', 'REST APIs', 'WebSockets', 'Multithreading', 'State Machines', 'TCP/IP'],
   },
   {
-    label: 'AI/ML & NLP',
-    items: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'HuggingFace Transformers', 'DistilBERT', 'spaCy', 'CNN', 'Knowledge Distillation', 'Clinical NLP'],
+    label: 'AI & Agent Infrastructure',
+    items: ['Agent Pipelines', 'MCP (Model Context Protocol)', 'HuggingFace Transformers', 'Knowledge Distillation', 'CNN', 'Clinical NLP', 'RAG'],
   },
   {
     label: 'Cloud & Infra',
-    items: ['Docker', 'GitHub Actions', 'Linux', 'GCP', 'AWS', 'Kubernetes', 'Render', 'Vercel'],
+    items: ['Docker', 'GitHub Actions', 'Linux', 'AWS', 'GCP'],
   },
   {
     label: 'Networking',
     items: ['BBR / CUBIC / Reno', 'Linux Kernel Modules', 'Mininet', 'tc/netem', 'iperf3'],
   },
   {
-    label: 'Frontend & Web',
-    items: ['React', 'Next.js', 'Vite', 'Tailwind CSS', 'WebSockets'],
+    label: 'Frontend',
+    items: ['React', 'Next.js', 'WebSockets'],
   },
 ]
 

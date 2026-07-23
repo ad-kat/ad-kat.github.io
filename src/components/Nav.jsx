@@ -44,14 +44,6 @@ export default function Nav() {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <a
-            href="/Adri_Katyayan_Resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-md border border-line bg-panel px-3 py-1.5 font-mono text-xs text-ink transition-colors hover:border-violet hover:text-violet"
-          >
-            resume.pdf
-          </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

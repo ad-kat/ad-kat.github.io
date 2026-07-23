@@ -21,13 +21,15 @@ export default function About() {
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-widest text-pink">background</p>
         <h2 className="mt-2 font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Systems person who ended up in AI/ML.
+          Building the infrastructure that makes AI actually work.
         </h2>
         <p className="mt-4 max-w-2xl text-mute">
-          I started in networking and backend infra, drifted into clinical NLP and computer vision through
-          published otolaryngology research, and now spend most of my time building agent infrastructure and
-          high-throughput systems. I like the unglamorous parts: latency, state machines, audit trails.
-        </p>
+  Started in backend and data systems, ended up building agent infrastructure at DevRev — 
+  shipping real features for Kilmer, a negotiation-advisor agent in active beta. 
+  Five peer-reviewed papers in clinical AI on the side, because apparently that happened too. 
+  Most interested in the parts nobody glamorizes: what breaks under load, 
+  what the agent does when the LLM goes silent, and whether the thing actually ships.
+</p>
       </Reveal>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
