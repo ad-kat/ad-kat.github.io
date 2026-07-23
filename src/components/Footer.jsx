@@ -9,8 +9,8 @@ export default function Footer() {
           Let's build something.
         </h2>
         <p className="mt-3 max-w-xl text-mute">
-          Interested in AI infrastructure, ML systems, and backend engineering — the parts where research
-          ideas turn into things that actually run in production.
+          Interested in AI infrastructure, ML systems, and backend engineering (Parts where research
+          ideas turn into things that actually run in production).
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">

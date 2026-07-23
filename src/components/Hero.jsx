@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { profile, bootLines } from '../data/data.js'
+import { profile } from '../data/data.js'
 
 export default function Hero() {
   return (
@@ -7,20 +7,6 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-canvas via-canvas/60 to-canvas" />
 
       <div className="relative mx-auto max-w-6xl px-6">
-        {/* boot sequence */}
-        <div className="mb-10 rounded-lg border border-line bg-panel/70 px-5 py-4 font-mono text-xs text-mute sm:text-sm">
-          {bootLines.map((line, i) => (
-            <motion.p
-              key={line}
-              initial={{ opacity: 0, x: -8 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.15 * i, duration: 0.4 }}
-              className={i === bootLines.length - 1 ? 'text-violet' : ''}
-            >
-              {line}
-            </motion.p>
-          ))}
-        </div>
 
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
