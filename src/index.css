@@ -8,39 +8,45 @@
    hues across the violet -> orchid -> pink -> plum -> lilac range — no
    orange, no maroon, no blue. */
 :root {
-  --c-canvas: 248 248 240; 
-  --c-panel: 190 229 176;
-  --c-panel2: 250 245 164;
-  --c-line: 36 22 58;
-  --c-ink: 70 20 130;
-  --c-mute: 36 22 58;
+  --c-canvas: 251 247 239;   /* #FBF7EF — cream page */
+  --c-panel: 255 252 245;    /* #FFFCF5 — cards */
+  --c-panel2: 243 235 220;   /* #F3EBDC — alternate sections */
+  --c-line: 215 205 189;     /* #D7CDBD — borders */
+  --c-ink: 40 27 53;         /* #281B35 — primary text */
+  --c-mute: 102 91 108;      /* #665B6C — secondary text */
 
-  --c-violet: 36 22 58;
-  --c-orchid: 102 51 102;
-  --c-pink: 214 84 156;
-  --c-plum: 107 63 140;
-  --c-lilac: 130 96 196;
+  --c-violet: 91 60 136;     /* #5B3C88 — buttons, links */
+  --c-orchid: 116 74 160;    /* #744AA0 — hover / emphasis */
+  --c-pink: 143 80 126;      /* #8F507E — restrained mulberry */
+  --c-plum: 61 40 84;        /* #3D2854 — strong dark accent */
+  --c-lilac: 182 162 207;    /* #B6A2CF — soft accent */
 
-  --c-grid-line: 232 219 245;
-  --c-selection-bg: 196 165 252;
+  --c-gold: 140 101 25;      /* #8C6519 — accessible gold text */
+  --c-gold-soft: 218 182 93; /* #DAB65D — crest/detail fill */
+  --c-teal: 39 109 106;      /* #276D6A — optional supporting accent */
+  --c-grid-line: 234 226 214; /* #EAE2D6 */
+  --c-selection-bg: 220 208 238; /* #DCD0EE */
 }
 
 .dark {
-  --c-canvas: 26 15 46;
-  --c-panel: 45 28 73;
-  --c-panel2: 58 36 89;
-  --c-line: 96 66 142;
-  --c-ink: 243 234 251;
-  --c-mute: 195 170 217;
+  --c-canvas: 23 19 30;      /* #17131E — warm near-black */
+  --c-panel: 33 26 43;       /* #211A2B — card surface */
+  --c-panel2: 46 36 59;      /* #2E243B — elevated section */
+  --c-line: 84 72 103;       /* #544867 — borders */
+  --c-ink: 245 240 248;      /* #F5F0F8 — primary text */
+  --c-mute: 198 189 204;     /* #C6BDCC — secondary text */
 
-  --c-violet: 196 165 252;
-  --c-orchid: 224 166 242;
-  --c-pink: 242 168 214;
-  --c-plum: 198 152 224;
-  --c-lilac: 180 154 232;
+  --c-violet: 201 181 228;   /* #C9B5E4 — links/buttons */
+  --c-orchid: 214 183 230;   /* #D6B7E6 — hover/emphasis */
+  --c-pink: 224 169 207;     /* #E0A9CF — restrained mulberry */
+  --c-plum: 185 161 213;     /* #B9A1D5 — soft violet */
+  --c-lilac: 150 129 179;    /* #9681B3 — subtle accent */
 
-  --c-grid-line: 58 36 89;
-  --c-selection-bg: 124 58 224;
+  --c-gold: 228 191 104;     /* #E4BF68 — crest gold */
+  --c-gold-soft: 244 216 147; /* #F4D893 — highlight only */
+  --c-teal: 117 196 188;     /* #75C4BC — optional supporting accent */
+  --c-grid-line: 46 36 59;   /* #2E243B */
+  --c-selection-bg: 127 92 168; /* #7F5CA8 */
 }
 
 ::selection {
