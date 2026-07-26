@@ -7,7 +7,6 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-canvas via-canvas/60 to-canvas" />
 
       <div className="relative mx-auto max-w-6xl px-6">
-
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,12 +42,20 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="rounded-md bg-violet px-5 py-2.5 font-mono text-sm font-medium text-canvas transition-transform hover:-translate-y-0.5"
+            className="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-ink transition-colors hover:border-violet hover:text-violet"
           >
             view projects
           </a>
           <a
-            href={`mailto:${profile.email}`}
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-ink transition-colors hover:border-violet hover:text-violet"
+          >
+            linkedin ↗
+          </a>
+          <a
+           href={`mailto:${profile.email}`}
             className="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-ink transition-colors hover:border-violet hover:text-violet"
           >
             email me
@@ -59,7 +66,7 @@ export default function Hero() {
             rel="noreferrer"
             className="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-ink transition-colors hover:border-violet hover:text-violet"
           >
-            github
+            github ↗
           </a>
         </motion.div>
       </div>

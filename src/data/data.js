@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Adri Katyayan',
-  role: 'MS CS @ Stony Brook University',
-  tagline: 'AI/ML systems, distributed infra, and clinical NLP... Built and shipped, not just studied.',
+  role: 'Software Engineer · New Grad 2027 · AI/ML & Backend Systems',
+  tagline: 'AI/ML systems, distributed infra, and NLP. Built and shipped, not just studied.',
   email: 'adri.katyayan@stonybrook.edu',
   phone: '+1 (551) 312-9658',
   linkedin: 'https://www.linkedin.com/in/adri-katyayan/',
@@ -115,9 +115,19 @@ export const experience = [
 
 export const projectTags = ['All', 'AI/ML', 'Systems', 'Health', 'Web']
 
+export const certifications = [
+  { name: 'Google Cloud Computing Foundations', url: 'https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fwww.credly.com%2Fbadges%2F6ea2f0e9-033b-4000-8b78-7fe8ed47b0d7%2Flinked_in_profile&urlhash=TW2b&mt=lmew-yO1Xt8HNQnN78-c0ZILku_uKxDKb-QSYo_IFCNU12e5ChPG17tx7GdAE2xLxBogxrSVldC7zjAJu784xVc4t8I&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BhcNwdQzwTxWN%2FyE9WCOzBA%3D%3D' },
+  { name: 'Data Analysis & Visualization with Power BI', url: 'https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fwww.coursera.org%2Faccount%2Faccomplishments%2Fspecialization%2FRLESE47K36WY&urlhash=BpdS&mt=oNn55Ze-birh7Ns8S1me_Hb3rke27U7dWHkBDBJkr3rYUffRnDgFm2qyz4eS5NT-fJkpjdxm8NTgKhkwsflQJMhvSIM&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BhcNwdQzwTxWN%2FyE9WCOzBA%3D%3D' },
+  { name: 'Build a Secure Google Cloud Network', url: 'https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fwww.credly.com%2Fbadges%2F655f32a8-6fd7-43ef-b4e4-5198af447cd2%2Flinked_in_profile&urlhash=8tK0&mt=xWTG4ShjA8Xqi5TzgLFpGmCJMCteaN_a9TWR3x2SyQ4Lao8Rjs5sBDL7Dt2iBJDDGGgy1XfCWBh2nYsFYdggKLQZcXA&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BhcNwdQzwTxWN%2FyE9WCOzBA%3D%3D' },
+  { name: 'CITI - Biomedical Research', url: 'https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fwww.citiprogram.org%2Fverify%2F%3Fw55c5ad64-dd4d-42ef-8407-7056d6453286-76426835&urlhash=sZS8&mt=Oo83lzfmxTA19iQGwdU2i6yybanMcXMm_7Qf76EhIGTooTbKeCzMuBs_HF9XzSRkusgeplDt55vr4ki6HIBFdsNpF8w&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BF3gi0YRNQ%2FyZ8k%2F0SFeuPg%3D%3D' },
+  { name: 'CITI - Social & Behavioral Research', url: 'https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fwww.citiprogram.org%2Fverify%2F%3Fw32cd800a-d964-459c-a5a9-0cdbd6afaefa-76329263&urlhash=zeNc&mt=J-D9T7AwNu62eM0jNkwYr-Isw9TF1MxVn8lzYlKXLBHhDh8Xhl7DzmYQKYd1wiUHQtbucW1-6FBbfYMu4DQ7YqLGMuk&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BF3gi0YRNQ%2FyZ8k%2F0SFeuPg%3D%3D' },
+  { name: 'CITI - Data or Specimens Only Research', url: 'https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fwww.citiprogram.org%2Fverify%2F%3Fw777a9a58-e7bd-4880-b0c8-a56acd38c0f4-76454035&urlhash=IOuU&mt=-L3nlCOuE90xzWPso8ofv8RVpOMfzWbeXSI7nTHHLTmKr4AVPOK-wKMhD_oyfQtW4suxGh-e4LU0v32jVsoS4Z03ehY&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BF3gi0YRNQ%2FyZ8k%2F0SFeuPg%3D%3D' },
+]
+
 export const projects = [
   {
     title: 'ClinicalContradiction',
+    gif: null,
     tags: ['AI/ML', 'Health'],
     stack: 'Python · DistilBERT · Groq/Llama · FastAPI · PostgreSQL',
     metric: '140× faster inference',
@@ -131,6 +141,7 @@ export const projects = [
   },
   {
     title: 'C++ Limit Order Book & Matching Engine',
+    gif: null,
     tags: ['Systems', 'AI/ML'],
     stack: 'C++20 · Python · FastAPI · React · WebSockets',
     metric: '1.9M ops/sec',
@@ -144,6 +155,7 @@ export const projects = [
   },
   {
     title: 'MiceWatch - TCP Congestion Control Study',
+    gif: null,
     tags: ['Systems'],
     stack: 'Python · Rust · Mininet · Linux Kernel C',
     metric: '27-config sweep grid',
@@ -157,6 +169,7 @@ export const projects = [
   },
   {
     title: 'Cloud Resource Lifecycle Manager',
+    gif: null,
     tags: ['Systems', 'Web'],
     stack: 'Python · FastAPI · PostgreSQL · Docker · APScheduler',
     metric: '5-min policy cycle',
@@ -170,6 +183,7 @@ export const projects = [
   },
   {
     title: 'LaughLab',
+    gif: null,
     tags: ['AI/ML'],
     stack: 'Python · Whisper · YAMNet · Groq/LLaMA · FastAPI',
     metric: '20-bin laugh heatmaps',
@@ -182,6 +196,7 @@ export const projects = [
   },
   {
     title: 'GestureNav - Browser Shortcuts',
+    gif: null,
     tags: ['Web'],
     stack: 'JavaScript · HTML5 Canvas · Chrome Extensions',
     metric: '$1 gesture recognizer',
@@ -194,6 +209,7 @@ export const projects = [
   },
   {
     title: 'OSM Graph Routing Engine',
+    gif: null,
     tags: ['Systems'],
     stack: 'Java 21 · OpenStreetMap · StAX · REST',
     metric: '97% fewer nodes (A*)',
@@ -260,7 +276,7 @@ export const skillGroups = [
   },
   {
     label: 'AI & Agent Infrastructure',
-    items: ['Agent Pipelines', 'MCP (Model Context Protocol)', 'HuggingFace Transformers', 'Knowledge Distillation', 'CNN', 'Clinical NLP', 'RAG'],
+    items: ['Agent Pipelines', 'MCP (Model Context Protocol)', 'HuggingFace Transformers', 'Knowledge Distillation', 'CNN', 'NLP', 'RAG'],
   },
   {
     label: 'Cloud & Infra',
@@ -276,13 +292,3 @@ export const skillGroups = [
   },
 ]
 
-export const certifications = [
-  'Google Cloud Computing Foundations Certificate',
-  'Data Analysis and Visualization with Power BI',
-  'Build a Secure Google Cloud Network Skill Badge',
-  'Python Data Structures',
-  'Using Python to Access Web Data',
-  'CITI - Biomedical Research',
-  'CITI - Social & Behavioral Research',
-  'CITI - Good Clinical Practice',
-]

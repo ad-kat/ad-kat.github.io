@@ -24,12 +24,12 @@ export default function About() {
           Building the infrastructure that makes AI actually work.
         </h2>
         <p className="mt-4 max-w-2xl text-mute">
-  Started in backend and data systems, ended up building agent infrastructure at DevRev — 
-  shipping real features for Kilmer, a negotiation-advisor agent in active beta. 
-  Five peer-reviewed papers in clinical AI on the side, because apparently that happened too. 
-  Most interested in the parts nobody glamorizes: what breaks under load, 
-  what the agent does when the LLM goes silent, and whether the thing actually ships.
-</p>
+          Started in backend and data systems, ended up building agent infrastructure at DevRev —
+          shipping real features for Kilmer, a negotiation-advisor agent in active beta.
+          Five peer-reviewed papers in clinical AI on the side, because apparently that happened too.
+          Most interested in the parts nobody glamorizes: what breaks under load,
+          what the agent does when the LLM goes silent, and whether the thing actually ships.
+        </p>
       </Reveal>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -55,12 +55,15 @@ export default function About() {
             <p className="font-mono text-xs uppercase tracking-widest text-violet">certifications</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {certifications.map((c) => (
-                <span
-                  key={c}
-                  className="rounded-full border border-line bg-panel2 px-3 py-1.5 font-mono text-xs text-mute"
+                <a
+                  key={c.name}
+                  href={c.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-line bg-panel2 px-3 py-1.5 font-mono text-xs text-mute transition-colors hover:border-gold hover:text-gold"
                 >
-                  {c}
-                </span>
+                  {c.name} ↗
+                </a>
               ))}
             </div>
           </div>

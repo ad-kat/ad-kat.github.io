@@ -16,6 +16,8 @@ export default {
         pink: 'rgb(var(--c-pink) / <alpha-value>)',
         plum: 'rgb(var(--c-plum) / <alpha-value>)',
         lilac: 'rgb(var(--c-lilac) / <alpha-value>)',
+        gold: 'rgb(var(--c-gold) / <alpha-value>)',
+        'gold-soft': 'rgb(var(--c-gold-soft) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],
