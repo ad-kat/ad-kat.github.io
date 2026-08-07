@@ -33,12 +33,12 @@ export const experience = [
     location: 'Palo Alto, CA',
     period: 'Jun 2026 - Present',
     bullets: [
-    'Built the latency-aware thinking-state system for Kilmer (AI negotiation-advisor agent in active beta): a state machine spanning request dispatch, tool-call silences, and token streaming, ensuring accurate real-time UI feedback under variable LLM response patterns.',
-    'Shipped an end-to-end bug-reporting pipeline wired into DevRev\u2019s own ticketing API, with session-tagged traces and presigned artifact upload for replaying agent runs across environments.',
-    'Implemented real-time speech-to-text (WebSocket streaming with server-minted short-lived auth tokens) feeding live transcripts directly into the agent, enabling full voice-conversation mode with Kilmer.',
-    'Engineered a guardrail audit snap-in scanning 500+ conversations per run for system-prompt leaks using batched parallel LLM calls with exponential-backoff retry.',
-    'Migrating Kilmer to a new agent runtime to improve document-generation quality; conducting early research on exposing Kilmer as an MCP agent for integration with external tools and workflows.',
-  ],
+     'Shipped an end-to-end bug-reporting pipeline wired into DevRev\'s ticketing API, with session-tagged traces and presigned artifact upload for replaying agent runs across environments.',
+      'Implemented real-time speech-to-text via WebSocket streaming with server-minted short-lived auth tokens, feeding live transcripts directly into Kilmer for full voice-conversation mode.',
+      'Engineered a guardrail audit snap-in that scans 500+ conversations per run for system-prompt leaks using batched parallel LLM calls with exponential-backoff retry.',
+      'Found a cost-visibility gap in DevRev\'s Neuron agent engine (Python, LangGraph, Temporal, gRPC): extended-thinking model requests bypassed the internal LLM gateway entirely, making them invisible to per-request cost and token tracking. Fixed by rerouting all thinking-mode traffic through the gateway.',
+      'Root-caused why an earlier fix was reverted (a ChatOpenAI client silently dropped Anthropic thinking blocks), then switched to a native ChatAnthropic client on the gateway\'s anthropic_unified Bedrock route behind a feature flag. Resolved two additional edge cases before validating end-to-end with integration tests covering streaming and sequential tool calls.',
+    ],
   },
   {
     company: 'Stony Brook University',
@@ -94,7 +94,7 @@ export const experience = [
     period: 'Dec 2021 - May 2023',
     bullets: [
       'Implemented CNN architectures (VGG19, Inception-v4, Modified VGG19 with batch normalization) in Python/MATLAB to classify tympanic-membrane images; ran data augmentation to expand a 115-image dataset to 455 samples.',
-      'Ran paired statistical analysis (Pearson/Spearman correlation, paired t-test, 95% CI) comparing smartphone audiometry thresholds against gold-standard PTA across 44 patients at 7 frequencies - published in Hearing, Balance and Communication (Taylor & Francis, 2022).',
+      'Ran paired statistical analysis (Pearson/Spearman correlation, paired t-test, 95% CI) comparing smartphone audiometry thresholds against gold-standard PTA across 44 patients at 7 frequencies, published in Hearing, Balance and Communication (Taylor & Francis, 2022).',
       'Benchmarked three CNN training runs (training accuracy up to 85%, validation ~58%); identified calibration and image-quality bottlenecks and proposed hardware-standardization improvements.',
       'Co-authored findings published in the Indian Journal of Otolaryngology (Springer, 2023), informing the design of a low-cost tele-audiology platform deployed in hospital OPDs.',
     ],
@@ -108,7 +108,7 @@ export const experience = [
       'Recruited and assessed 44+ patients using Pure Tone Audiometry and web-based hearing tests across 7 frequencies; structured and cleaned raw air-conduction threshold data for downstream ML analysis.',
       'Captured 115+ tympanic-membrane images via a borescope-integrated smartphone under COVID distancing protocols; curated and labeled the normal-vs-perforated dataset used to train CNN classifiers.',
       'Designed and executed data-collection protocols alongside otologists at a tertiary hospital OPD, ensuring consistency across patient cohorts for multi-study use.',
-      'Co-investigator on 4 peer-reviewed studies (Springer, Taylor & Francis) - provided clinical data, patient recruitment, and domain validation for publication.',
+      'Co-investigator on 4 peer-reviewed studies (Springer, Taylor & Francis); provided clinical data, patient recruitment, and domain validation for publication.',
     ],
   },
 ]
@@ -126,31 +126,17 @@ export const certifications = [
 
 export const projects = [
   {
-    title: 'ClinicalContradiction',
-    gif: null,
-    tags: ['AI/ML', 'Health'],
-    stack: 'Python · DistilBERT · Groq/Llama · FastAPI · PostgreSQL',
-    metric: '140× faster inference',
-    period: 'Mar - May 2026',
-    github: 'https://github.com/ad-kat/clinical-contradiction-detector',
-    bullets: [
-      'Clinical NLP system detecting cross-encounter inconsistencies in MIMIC-IV EHR data (145,914 patients, 331,793 notes) under PhysioNet credentialed access.',
-      'Knowledge distillation: rule-labeled teacher → fine-tuned DistilBERT student, F1=0.731 at 7ms inference.',
-      'Two contradiction detectors (allergy-medication conflict, diagnosis drift); containerized and deployed.',
-    ],
-  },
-  {
     title: 'C++ Limit Order Book & Matching Engine',
     gif: null,
     tags: ['Systems', 'AI/ML'],
     stack: 'C++20 · Python · FastAPI · React · WebSockets',
     metric: '1.9M ops/sec',
-    period: 'Dec 2025',
+    period: 'Dec 2025 - May 2026',
     github: 'https://github.com/ad-kat/Limit-order-book-and-Matching-engine',
     bullets: [
       'Price-time priority matching engine: ~1.9M ops/sec, sub-microsecond latency (p50=0.4µs, p95=0.9µs).',
-      'Live NASDAQ tick feed bridged via FastAPI into the C++ engine, broadcast over WebSocket.',
-      'LLM commentary agent narrating market microstructure every 8s with fingerprint-based caching.',
+      'Live NASDAQ tick feed bridged via FastAPI into the C++ engine and broadcast over WebSocket to a React dashboard with real-time order book depth and trade tape.',
+      'Six GoogleTest cases covering FIFO ordering, market orders, multilevel fills, and cancel-after-fill; CMake build with a release profile targeting the performance numbers above.',
     ],
   },
   {
@@ -162,36 +148,51 @@ export const projects = [
     period: 'Feb - May 2026',
     github: 'https://github.com/ad-kat/BBR-congestion-control-study',
     bullets: [
-      'Rust CLI orchestrating reproducible Mininet experiments characterizing BBR\u2019s short-flow latency penalty, extending Cao et al. (IMC 2019).',
-      'Two-level tc qdisc stack (HTB + netem) for bandwidth, delay, and buffer enforcement.',
-      'Self-contained HTML report generator with vanilla JS/Canvas charts - zero external dependencies.',
+      'Rust CLI orchestrating reproducible Mininet experiments that characterize BBR\'s short-flow latency penalty under mixed workloads, extending Cao et al. (IMC 2019).',
+      'Two-level tc qdisc stack (HTB + netem) for precise bandwidth, delay, and buffer enforcement; compiled and loaded three custom Linux kernel modules (tcp_bbr_gain110/115/120.ko) to sweep pacing-gain variants across a 27-config grid.',
+      'Self-contained HTML report generator with vanilla JS/Canvas charts and zero external dependencies; full results and per-phase figures committed to the repo.',
+    ],
+  },
+  {
+    title: 'ClinicalContradiction',
+    gif: null,
+    tags: ['AI/ML', 'Health'],
+    stack: 'Python · DistilBERT · FastAPI · PostgreSQL · HuggingFace Hub',
+    metric: '140× faster inference',
+    period: 'Mar 2026 - May 2026',
+    github: 'https://github.com/ad-kat/clinical-contradiction-detector',
+    bullets: [
+      'Clinical NLP system detecting cross-encounter inconsistencies in MIMIC-IV EHR data (145,914 patients, 331,793 notes) under PhysioNet credentialed access with CITI human subjects certification.',
+      'Knowledge distillation on 9,993 note pairs: a rule-based teacher labels a fine-tuned DistilBERT student with balanced class weighting and early stopping, reaching F1=0.868 (binary) and F1=0.856 (3-class macro) at 1.5ms with INT8 dynamic quantization, roughly 140x faster than the Groq/Llama-3.3-70b teacher.',
+      'Model deployed to HuggingFace Hub (ad-kat/clinical-contradiction-detector); FastAPI backend routes to local quantized weights in dev or the HF Inference API as a serverless production fallback, with a /classifier/info introspection endpoint and live interactive dashboard.',
     ],
   },
   {
     title: 'Cloud Resource Lifecycle Manager',
     gif: null,
     tags: ['Systems', 'Web'],
-    stack: 'Python · FastAPI · PostgreSQL · Docker · APScheduler',
+    stack: 'Python · FastAPI · PostgreSQL · Docker · Prometheus',
     metric: '5-min policy cycle',
-    period: 'Mar - May 2026',
+    period: 'Mar 2026 - May 2026',
     github: 'https://github.com/ad-kat/cloud-resource-manager',
     bullets: [
-      'Cloud governance REST API modeling the full resource lifecycle - provisioning, policy enforcement, drift detection - mirroring AWS Config patterns.',
-      'Background engine auto-stops TTL-breached resources and writes an append-only audit trail every 5 minutes.',
-      '14-test pytest suite (SQLite in-memory) wired to GitHub Actions CI on every push.',
+      'Cloud governance REST API covering the full resource lifecycle (provisioning, policy enforcement, drift detection, cost tracking, deprovisioning) with live Azure Retail Pricing API rates refreshed every 6 hours, mirroring AWS Config and GCP Asset Inventory patterns.',
+      'Background scheduler auto-stops TTL-breached resources every 5 minutes and appends every state transition to an audit trail that is never overwritten; API keys are generated with secrets.token_urlsafe, stored SHA-256 hashed, and enforced via FastAPI dependency injection with per-key revocation.',
+      '14-test pytest suite in SQLite in-memory isolation wired to GitHub Actions CI; streamed CSV export for cost reports and full audit logs; Prometheus request count and p99 latency histograms at /metrics.',
     ],
   },
   {
-    title: 'LaughLab',
+    title: 'OSM Graph Routing Engine',
     gif: null,
-    tags: ['AI/ML'],
-    stack: 'Python · Whisper · YAMNet · Groq/LLaMA · FastAPI',
-    metric: '20-bin laugh heatmaps',
-    github: 'https://github.com/ad-kat/standup-visualization-research',
-    period: 'Jan 2026 - Present',
+    tags: ['Systems'],
+    stack: 'Java 21 · OpenStreetMap · StAX · JUnit · Docker',
+    metric: '97% fewer nodes (A*)',
+    period: 'Apr 2026 - May 2026',
+    github: 'https://github.com/ad-kat/osm-routing-engine',
     bullets: [
-      'Audio/NLP pipeline for stand-up comedy: laugh-event detection, ASR transcription, sentiment on setups.',
-      'LLaMA-3.3-70B punchline detector across transcript segments with a multi-tab visualization dashboard.',
+      'Graph routing engine parsing OSM XML via StAX streaming into a spatial-indexed road graph (228 nodes, 849 edges) with O(1) nearest-node lookup; three travel profiles (DRIVING, WALKING, CYCLING) with per-road-type speeds and OSM no_turn restriction enforcement parsed from relation elements.',
+      'A* explored 97% fewer nodes than Dijkstra on cross-city routes while returning identical shortest paths; extended with isochrone computation (Dijkstra flood-fill and Graham-scan convex hull returning reachable-area GeoJSON polygons), k-alternative routes via edge-penalty A*, and multi-waypoint chained routing.',
+      '11 JUnit tests covering graph structure, nearest-node lookup, algorithm correctness, and GeoJSON output, wired to GitHub Actions CI with a Docker image.',
     ],
   },
   {
@@ -200,24 +201,11 @@ export const projects = [
     tags: ['Web'],
     stack: 'JavaScript · HTML5 Canvas · Chrome Extensions',
     metric: '$1 gesture recognizer',
-    period: 'Aug - Dec 2025',
+    period: 'Aug 2025 - Dec 2025',
     github: 'https://github.com/ad-kat/Gesture-Browser-Shortcuts',
     bullets: [
-      'Manifest V3 Chrome extension mapping drawn gestures to browser actions via a $1-style recognizer.',
-      'Real-time HUD (similarity score, latency, accuracy); usability-tested including a motor-impaired user.',
-    ],
-  },
-  {
-    title: 'OSM Graph Routing Engine',
-    gif: null,
-    tags: ['Systems'],
-    stack: 'Java 21 · OpenStreetMap · StAX · REST',
-    metric: '97% fewer nodes (A*)',
-    period: 'Apr - May 2026',
-    github: 'https://github.com/ad-kat/osm-routing-engine',
-    bullets: [
-      'Graph routing engine parsing OSM XML via StAX streaming into a spatial-indexed road graph (228 nodes, 849 edges).',
-      'A* explored 97% fewer nodes than Dijkstra on cross-city routes while guaranteeing identical shortest paths.',
+      'Manifest V3 Chrome extension mapping drawn gestures to browser actions via a $1-style recognizer with no ML dependency.',
+      'Real-time HUD showing similarity score, latency, and accuracy per gesture; usability-tested across multiple users including a motor-impaired participant.',
     ],
   },
 ]
@@ -237,7 +225,7 @@ export const publications = [
     date: 'Apr 2023',
     doi: 'https://doi.org/10.1007/s12070-023-03769-3',
     summary:
-      'Used a low-cost ($10) borescope-and-smartphone rig to capture 115 tympanic-membrane images remotely during COVID, then benchmarked three CNN architectures (VGG19, Inception-v4, Modified VGG19 with batch normalization) to automatically flag central eardrum perforations - best model reached 85% training accuracy, pointing to both the promise and current limits of low-cost AI-assisted ear screening in underserved areas.',
+      'Used a low-cost ($10) borescope-and-smartphone rig to capture 115 tympanic-membrane images remotely during COVID, then benchmarked three CNN architectures (VGG19, Inception-v4, Modified VGG19 with batch normalization) to automatically flag central eardrum perforations. Best model reached 85% training accuracy, pointing to both the promise and current limits of low-cost AI-assisted ear screening in underserved areas.',
   },
   {
     title: "Enhancing India's Healthcare During COVID Era: Role of Artificial Intelligence & Algorithms",
@@ -253,7 +241,7 @@ export const publications = [
     date: 'Aug 2022',
     doi: 'https://doi.org/10.1080/21695717.2022.2102726',
     summary:
-      'Compared a smartphone hearing-test app against gold-standard pure-tone audiometry across 44 patients and 7 frequencies - found significant correlation but device calibration inconsistencies, informing hardware-standardization recommendations for tele-audiology apps.',
+      'Compared a smartphone hearing-test app against gold-standard pure-tone audiometry across 44 patients and 7 frequencies. Found significant correlation but device calibration inconsistencies, informing hardware-standardization recommendations for tele-audiology apps.',
   },
   {
     title: 'Internet-Based Hearing Assessment During COVID Era in Indian Population: Practical and Safe Option',
@@ -261,7 +249,7 @@ export const publications = [
     date: 'Jan 2022',
     doi: 'https://doi.org/10.1007/s12070-020-02198-w',
     summary:
-      'Pilot study validating a web-based hearing test against clinical pure-tone audiometry on 20 patients - reliably screened symmetrical hearing loss remotely, though it struggled with asymmetrical cases, supporting safe at-home screening during lockdowns.',
+      'Pilot study validating a web-based hearing test against clinical pure-tone audiometry on 20 patients. Reliably screened symmetrical hearing loss remotely, though it struggled with asymmetrical cases, supporting safe at-home screening during lockdowns.',
   },
 ]
 
@@ -272,15 +260,19 @@ export const skillGroups = [
   },
   {
     label: 'Backend & Systems',
-    items: ['FastAPI', 'Flask', 'PostgreSQL', 'MySQL', 'REST APIs', 'WebSockets', 'Multithreading', 'State Machines', 'TCP/IP'],
+    items: ['FastAPI', 'PostgreSQL', 'WebSockets', 'gRPC', 'Prometheus'],
   },
   {
-    label: 'AI & Agent Infrastructure',
-    items: ['Agent Pipelines', 'MCP (Model Context Protocol)', 'HuggingFace Transformers', 'Knowledge Distillation', 'CNN', 'NLP', 'RAG'],
+    label: 'AI & ML',
+    items: ['HuggingFace Transformers', 'Knowledge Distillation', 'Model Quantization', 'Whisper', 'YAMNet', 'MediaPipe'],
+  },
+  {
+    label: 'Agent & Distributed Systems',
+    items: ['LangGraph', 'Temporal', 'LiteLLM'],
   },
   {
     label: 'Cloud & Infra',
-    items: ['Docker', 'GitHub Actions', 'Linux', 'AWS', 'GCP'],
+    items: ['Docker', 'GitHub Actions', 'AWS (EC2 · S3 · Bedrock)'],
   },
   {
     label: 'Networking',
@@ -288,7 +280,6 @@ export const skillGroups = [
   },
   {
     label: 'Frontend',
-    items: ['React', 'Next.js', 'WebSockets'],
+    items: ['React', 'Next.js'],
   },
 ]
-

@@ -21,14 +21,10 @@ export default function About() {
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-widest text-pink">background</p>
         <h2 className="mt-2 font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Building the infrastructure that makes AI actually work.
+          Researcher by training, systems engineer by preference. Clinical AI on paper, agent infrastructure in production.
         </h2>
         <p className="mt-4 max-w-2xl text-mute">
-          Started in backend and data systems, ended up building agent infrastructure at DevRev —
-          shipping real features for Kilmer, a negotiation-advisor agent in active beta.
-          Five peer-reviewed papers in clinical AI on the side, because apparently that happened too.
-          Most interested in the parts nobody glamorizes: what breaks under load,
-          what the agent does when the LLM goes silent, and whether the thing actually ships.
+          Two years in clinical NLP research, five papers, then a summer at DevRev shipping agent infrastructure for Kilmer, a negotiation-advisor agent in active beta. I spend most of my time on the parts that aren't obvious until something breaks: what an agent does when the LLM times out, whether a 500-conversation security scan gives the same result twice. Outside of that, I do embroidery and mandala art. Started both to get better at sitting with slow work. Still a work in progress.
         </p>
       </Reveal>
 

@@ -9,8 +9,7 @@ export default function Footer() {
           Let's build something.
         </h2>
         <p className="mt-3 max-w-xl text-mute">
-          Interested in AI infrastructure, ML systems, and backend engineering — the parts where
-          research ideas turn into things that actually run in production.
+          Open to roles in ML systems, agent infrastructure, and backend engineering. If the interesting problems live closer to production than to the paper, that's where I want to be.
         </p>
         <p className="mt-2 font-mono text-xs text-mute">
           Open to SWE / SDE / MTS roles across the United States · New Grad 2027
