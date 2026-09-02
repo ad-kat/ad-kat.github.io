@@ -5,7 +5,7 @@ const groupColors = ['text-violet', 'text-pink', 'text-orchid', 'text-plum', 'te
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-6 py-20">
+    <section id="skills" className="mx-auto max-w-7xl px-6 py-20">
       <p className="font-mono text-xs uppercase tracking-widest text-lilac">toolbox</p>
       <h2 className="mt-2 font-display text-3xl font-semibold text-ink sm:text-4xl">Skills</h2>
 

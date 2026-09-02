@@ -17,14 +17,14 @@ function Reveal({ children, className }) {
 
 export default function About() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
+    <section className="mx-auto max-w-7xl px-6 py-20">
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-widest text-pink">background</p>
         <h2 className="mt-2 font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Researcher by training, systems engineer by preference. Clinical AI on paper, agent infrastructure in production.
+          About me
         </h2>
-        <p className="mt-4 max-w-2xl text-mute">
-          Two years in clinical NLP research, five papers, then a summer at DevRev shipping agent infrastructure for Kilmer, a negotiation-advisor agent in active beta. I spend most of my time on the parts that aren't obvious until something breaks: what an agent does when the LLM times out, whether a 500-conversation security scan gives the same result twice. Outside of that, I do embroidery and mandala art. Started both to get better at sitting with slow work. Still a work in progress.
+        <p className="mt-2 text-mute">
+          I'm a software engineer, building backend systems and agent infrastructure. Most of my work goes into reliability, edge cases and things that only show up when traffic spikes or an LLM times out mid-run. That's been most of what I've worked on at DevRev. I'm more interested in systems that hold under pressure than ones that look good in a demo. Outside this, I do embroidery and mandala art. Both are about working inside tight constraints. You have a grid, you work within it, and the interesting decisions happen when you push against it. Not a bad way to think about software either.
         </p>
       </Reveal>
 

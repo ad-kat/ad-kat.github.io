@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { experience } from '../data/data.js'
 
-const DEFAULT_OPEN = new Set(['DevRev', 'Stony Brook University', 'Rystad Energy'])
+const DEFAULT_OPEN = new Set(['DevRev'])
 
 export default function Experience() {
   const [open, setOpen] = useState(() =>
@@ -12,7 +12,7 @@ export default function Experience() {
   const toggle = (company) => setOpen((v) => ({ ...v, [company]: !v[company] }))
 
   return (
-    <section id="work" className="mx-auto max-w-6xl px-6 py-20">
+    <section id="work" className="mx-auto max-w-7xl px-6 py-20">
       <motion.p
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -32,7 +32,7 @@ export default function Nav() {
         scrolled || open ? 'bg-canvas/90 backdrop-blur border-b border-line' : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-2 font-mono text-sm text-ink" onClick={() => setOpen(false)}>
           <img src="/crest.png" alt="" className="h-8 w-8 object-contain" />
           <span className="hidden sm:inline text-mute">adri-katyayan</span>

@@ -2,7 +2,7 @@ export const profile = {
   name: 'Adri Katyayan',
   role: 'Software Engineer · New Grad 2027 · AI/ML & Backend Systems',
   tagline: 'AI/ML systems, distributed infra, and NLP. Built and shipped, not just studied.',
-  email: 'adri.katyayan@stonybrook.edu',
+  email: 'adkatyayan@cs.stonybrook.edu',
   phone: '+1 (551) 312-9658',
   linkedin: 'https://www.linkedin.com/in/adri-katyayan/',
   github: 'https://github.com/ad-kat',
@@ -33,23 +33,31 @@ export const experience = [
     location: 'Palo Alto, CA',
     period: 'Jun 2026 - Present',
     bullets: [
-     'Shipped an end-to-end bug-reporting pipeline wired into DevRev\'s ticketing API, with session-tagged traces and presigned artifact upload for replaying agent runs across environments.',
-      'Implemented real-time speech-to-text via WebSocket streaming with server-minted short-lived auth tokens, feeding live transcripts directly into Kilmer for full voice-conversation mode.',
-      'Engineered a guardrail audit snap-in that scans 500+ conversations per run for system-prompt leaks using batched parallel LLM calls with exponential-backoff retry.',
-      'Found a cost-visibility gap in DevRev\'s Neuron agent engine (Python, LangGraph, Temporal, gRPC): extended-thinking model requests bypassed the internal LLM gateway entirely, making them invisible to per-request cost and token tracking. Fixed by rerouting all thinking-mode traffic through the gateway.',
-      'Root-caused why an earlier fix was reverted (a ChatOpenAI client silently dropped Anthropic thinking blocks), then switched to a native ChatAnthropic client on the gateway\'s anthropic_unified Bedrock route behind a feature flag. Resolved two additional edge cases before validating end-to-end with integration tests covering streaming and sequential tool calls.',
+      'Traced a production bug in DevRev\'s Neuron agent engine (LangGraph, Temporal, gRPC) where a ChatOpenAI client silently dropped Anthropic thinking blocks, causing all extended-thinking traffic to skip the LLM gateway and disappear from per-request cost and token tracking across 7 regions. Fixed by switching to a native ChatAnthropic client on the gateway\'s Bedrock route behind a feature flag; validated end-to-end with integration tests covering streaming and sequential tool calls.',
+      'Built Kilmer\'s guardrail audit snap-in: pages through 500+ conversations per daily run in batches of 5, dispatches LLM breach-detection calls to AWS Bedrock with exponential-backoff retry, and auto-files structured security tickets for flagged system-prompt leaks.',
+      'Built the bug-reporting pipeline: client-side log capture, presigned S3 artifact uploads, and automated DevRev ticket creation with session IDs, replacing manual log digging with structured agent trace replay.',
+      'Implemented real-time speech-to-text for Kilmer using Deepgram\'s streaming WebSocket API, processing mic input in 250ms chunks with server-side token minting and extending it into a full voice conversation mode.',
+      'Integrated 8 Stripe API endpoints (subscriptions, payment methods, billing portal, webhook reconciliation) into Kilmer\'s full billing lifecycle.',
+    ],
+  },
+  {
+    company: 'Stony Brook University',
+    role: 'Graduate Teaching Assistant',
+    location: 'Stony Brook, NY',
+    period: 'Aug 2026 - Present',
+    bullets: [
+      'TA for CSE 316: Software Development under Prof. Richard McKenna.',
     ],
   },
   {
     company: 'Stony Brook University',
     role: 'Graduate Research Assistant',
     location: 'Stony Brook, NY',
-    period: 'Jan 2026 - May 2026',
+    period: 'Jan 2026 - Present',
     bullets: [
-      'Research project: Multimodal Visual Analytics for Explainable AI in Video and Audio Analysis, advised by Prof. Klaus Mueller.',
-      'Architected a multimodal pipeline (Whisper ASR, YAMNet audio events, MediaPipe pose, LLM punchline extraction) studying comedic timing in stand-up performances.',
-      'Built an audio-event alignment engine computing per-joke laugh latency, duration, and intensity across full recordings.',
-      'Shipped a FastAPI backend and interactive dashboard visualizing laugh timelines and crowd-emotion heatmaps.',
+      'Built a multimodal audio analysis pipeline fusing YAMNet (0.48s frame resolution), OpenAI Whisper word-level ASR, and WebRTC VAD; detects crowd laugh events with 345ms average latency.',
+      'Built an LLM-driven punchline detection module that extracts recurring comedic beats from transcripts and scores crowd reaction intensity across 6 linguistic features.',
+      'Shipped a FastAPI backend and a 4-tab research dashboard visualizing laugh timelines and crowd-emotion heatmaps.',
     ],
   },
   {
@@ -58,10 +66,10 @@ export const experience = [
     location: 'Bengaluru, India',
     period: 'Jan 2025 - Jun 2025',
     bullets: [
-      'Built and maintained 16+ production web crawlers and ingestion services collecting global price index data, processing 600K+ daily feeds with automated anomaly detection.',
-      'Designed and deployed a containerized ETL pipeline (Docker) with data-quality checks and monitoring that cut silent failures across ingestion workflows.',
-      'Re-platformed legacy Excel-based reporting to a PostgreSQL star schema with batch jobs and indexing, improving p95 query latency from ~900ms to ~380ms (~60%).',
-      'Productionized pipelines under real-world failure conditions and validated correctness against live procurement cost data.',
+      'Built 16 production web crawlers and an orchestration pipeline that auto-refreshes 600K+ price indices across 16 countries on schedule, replacing a full-time manual monthly process with a monitored batch run.',
+      'Migrated the Labor Market Trends dashboard from Excel to a PostgreSQL star schema with 3 relational tables and batch ETL pipelines, cutting p95 query latency ~58% (900ms to 380ms) for direct-query Power BI integration.',
+      'Built a 7-feature Power BI quality-check dashboard (DAX) monitoring ingestion health, duplicate detection, and data coverage across 4,992 tracked indices.',
+      'Containerized the ETL pipeline (Docker) with data-quality checks and anomaly detection, reducing silent failures across ingestion workflows.',
     ],
   },
   {
@@ -70,10 +78,8 @@ export const experience = [
     location: 'Kanpur, India',
     period: 'May 2024 - Jul 2024',
     bullets: [
-      'Selected from a competitive SAARC applicant pool for the SURGE National Research Internship, Smart Grid initiative.',
-      'Designed scalable time-series processing and feature-extraction pipelines for smart-grid energy telemetry across 11 campus substations.',
-      'Profiled and optimized database queries and code paths to improve responsiveness for large-scale telemetry batch workloads.',
-      'Shipped two Kotlin Android apps with telemetry instrumentation and a Django backend to collect and visualize live smart-grid power data for a National Smart City pilot.',
+      'Built a Kotlin/Django Android app with 4 REST API integrations for energy monitoring, interactive telemetry graphs, and in-app PDF bill generation, deployed to all 51 households in IIT Kanpur\'s Ministry of Power smart city pilot.',
+      'Cleaned SCADA telemetry from 11 campus substations using median and Hampel filters, cutting pipeline throughput time by 40%; analyzed PV contribution data and measured islanded-grid durations up to 410 hours.',
     ],
   },
   {
@@ -82,33 +88,9 @@ export const experience = [
     location: 'Lucknow, India',
     period: 'Jun 2023 - Jul 2023',
     bullets: [
-      'Contributed to Mission Prerna, a statewide K-12 web platform, by developing backend modules using Java and C# MVC integrated with MS SQL Server services used by millions of users.',
-      'Designed and implemented server-side business logic, REST APIs, and database-backed features end to end.',
-      'Collaborated within an Agile team through code reviews, iterative releases, and issue tracking; wrote unit tests across deployment cycles.',
-    ],
-  },
-  {
-    company: 'ARTH.AI',
-    role: 'Research & Development Intern - ML Engineering',
-    location: 'India · Part-time',
-    period: 'Dec 2021 - May 2023',
-    bullets: [
-      'Implemented CNN architectures (VGG19, Inception-v4, Modified VGG19 with batch normalization) in Python/MATLAB to classify tympanic-membrane images; ran data augmentation to expand a 115-image dataset to 455 samples.',
-      'Ran paired statistical analysis (Pearson/Spearman correlation, paired t-test, 95% CI) comparing smartphone audiometry thresholds against gold-standard PTA across 44 patients at 7 frequencies, published in Hearing, Balance and Communication (Taylor & Francis, 2022).',
-      'Benchmarked three CNN training runs (training accuracy up to 85%, validation ~58%); identified calibration and image-quality bottlenecks and proposed hardware-standardization improvements.',
-      'Co-authored findings published in the Indian Journal of Otolaryngology (Springer, 2023), informing the design of a low-cost tele-audiology platform deployed in hospital OPDs.',
-    ],
-  },
-  {
-    company: "King George's Medical University",
-    role: 'Research Intern - Clinical Data & ML Systems',
-    location: 'Lucknow, India · Part-time',
-    period: 'Jun 2019 - Jun 2021',
-    bullets: [
-      'Recruited and assessed 44+ patients using Pure Tone Audiometry and web-based hearing tests across 7 frequencies; structured and cleaned raw air-conduction threshold data for downstream ML analysis.',
-      'Captured 115+ tympanic-membrane images via a borescope-integrated smartphone under COVID distancing protocols; curated and labeled the normal-vs-perforated dataset used to train CNN classifiers.',
-      'Designed and executed data-collection protocols alongside otologists at a tertiary hospital OPD, ensuring consistency across patient cohorts for multi-study use.',
-      'Co-investigator on 4 peer-reviewed studies (Springer, Taylor & Francis); provided clinical data, patient recruitment, and domain validation for publication.',
+      'Built backend modules for Mission Prerna, a statewide K-12 web platform serving millions of users, using Java and C# MVC with MS SQL Server.',
+      'Designed server-side business logic, REST APIs, and database-backed features end to end.',
+      'Worked within an Agile team through code reviews, iterative releases, and issue tracking; wrote unit tests across deployment cycles.',
     ],
   },
 ]
@@ -195,19 +177,6 @@ export const projects = [
       '11 JUnit tests covering graph structure, nearest-node lookup, algorithm correctness, and GeoJSON output, wired to GitHub Actions CI with a Docker image.',
     ],
   },
-  {
-    title: 'GestureNav - Browser Shortcuts',
-    gif: null,
-    tags: ['Web'],
-    stack: 'JavaScript · HTML5 Canvas · Chrome Extensions',
-    metric: '$1 gesture recognizer',
-    period: 'Aug 2025 - Dec 2025',
-    github: 'https://github.com/ad-kat/Gesture-Browser-Shortcuts',
-    bullets: [
-      'Manifest V3 Chrome extension mapping drawn gestures to browser actions via a $1-style recognizer with no ML dependency.',
-      'Real-time HUD showing similarity score, latency, and accuracy per gesture; usability-tested across multiple users including a motor-impaired participant.',
-    ],
-  },
 ]
 
 export const publications = [
@@ -256,15 +225,15 @@ export const publications = [
 export const skillGroups = [
   {
     label: 'Languages',
-    items: ['Python', 'C++', 'Java', 'Rust', 'SQL', 'TypeScript', 'JavaScript', 'Kotlin'],
+    items: ['Python', 'C++', 'C', 'Java', 'Rust', 'SQL', 'TypeScript', 'JavaScript', 'C#', 'Kotlin'],
   },
   {
     label: 'Backend & Systems',
-    items: ['FastAPI', 'PostgreSQL', 'WebSockets', 'gRPC', 'Prometheus'],
+    items: ['FastAPI', 'Flask', 'PostgreSQL', 'MySQL', 'SQLite', 'gRPC', 'WebSockets', 'SQLAlchemy', 'Prometheus'],
   },
   {
     label: 'AI & ML',
-    items: ['HuggingFace Transformers', 'Knowledge Distillation', 'Model Quantization', 'Whisper', 'YAMNet', 'MediaPipe'],
+    items: ['PyTorch', 'TensorFlow', 'HuggingFace Transformers', 'Scikit-learn', 'Knowledge Distillation', 'Model Quantization', 'Whisper', 'YAMNet', 'spaCy'],
   },
   {
     label: 'Agent & Distributed Systems',
@@ -272,11 +241,15 @@ export const skillGroups = [
   },
   {
     label: 'Cloud & Infra',
-    items: ['Docker', 'GitHub Actions', 'AWS (EC2 · S3 · Bedrock)'],
+    items: ['Docker', 'GitHub Actions', 'AWS (EC2 · S3 · RDS · Bedrock)', 'GCP (BigQuery · Compute Engine)', 'Kubernetes'],
   },
   {
-    label: 'Networking',
-    items: ['BBR / CUBIC / Reno', 'Linux Kernel Modules', 'Mininet', 'tc/netem', 'iperf3'],
+    label: 'Networking & Systems',
+    items: ['Linux Kernel Modules', 'Mininet', 'tc/netem', 'iperf3', 'CMake', 'BBR / CUBIC / Reno'],
+  },
+  {
+    label: 'Analytics',
+    items: ['MATLAB', 'Power BI (DAX)', 'Tableau', 'R'],
   },
   {
     label: 'Frontend',

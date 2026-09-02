@@ -20,9 +20,9 @@ export default {
         'gold-soft': 'rgb(var(--c-gold-soft) / <alpha-value>)',
       },
       fontFamily: {
-        display: ['"Space Grotesk"', 'sans-serif'],
-        body: ['"IBM Plex Sans"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        display: ['Calibri', 'Trebuchet MS', 'Arial', 'sans-serif'],
+        body: ['Calibri', 'Trebuchet MS', 'Arial', 'sans-serif'],
+        mono: ['Consolas', 'Courier New', 'monospace'],
       },
     },
   },
