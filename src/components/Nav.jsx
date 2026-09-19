@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import ThemeToggle from './ThemeToggle.jsx'
 
 const links = [
   { id: 'work', label: 'work' },
@@ -49,7 +48,6 @@ export default function Nav() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <ThemeToggle />
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

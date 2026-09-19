@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
@@ -20,9 +19,9 @@ export default {
         'gold-soft': 'rgb(var(--c-gold-soft) / <alpha-value>)',
       },
       fontFamily: {
-        display: ['Calibri', 'Trebuchet MS', 'Arial', 'sans-serif'],
-        body: ['Calibri', 'Trebuchet MS', 'Arial', 'sans-serif'],
-        mono: ['Consolas', 'Courier New', 'monospace'],
+        display: ['"Times New Roman"', 'Times', 'serif'],
+        body: ['"Times New Roman"', 'Times', 'serif'],
+        mono: ['"Times New Roman"', 'Times', 'serif'],
       },
     },
   },

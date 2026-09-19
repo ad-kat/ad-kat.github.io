@@ -1,5 +1,6 @@
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
+import WhyHireMe from './components/WhyHireMe.jsx'
 import About from './components/About.jsx'
 import Experience from './components/Experience.jsx'
 import Projects from './components/Projects.jsx'
@@ -13,6 +14,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <WhyHireMe />
         <About />
         <Experience />
         <Projects />

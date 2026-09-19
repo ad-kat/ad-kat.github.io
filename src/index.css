@@ -28,26 +28,7 @@
   --c-selection-bg: 220 208 238; /* #DCD0EE */
 }
 
-.dark {
-  --c-canvas: 23 19 30;      /* #17131E — warm near-black */
-  --c-panel: 33 26 43;       /* #211A2B — card surface */
-  --c-panel2: 46 36 59;      /* #2E243B — elevated section */
-  --c-line: 84 72 103;       /* #544867 — borders */
-  --c-ink: 245 240 248;      /* #F5F0F8 — primary text */
-  --c-mute: 198 189 204;     /* #C6BDCC — secondary text */
 
-  --c-violet: 201 181 228;   /* #C9B5E4 — links/buttons */
-  --c-orchid: 214 183 230;   /* #D6B7E6 — hover/emphasis */
-  --c-pink: 224 169 207;     /* #E0A9CF — restrained mulberry */
-  --c-plum: 185 161 213;     /* #B9A1D5 — soft violet */
-  --c-lilac: 150 129 179;    /* #9681B3 — subtle accent */
-
-  --c-gold: 228 191 104;     /* #E4BF68 — crest gold */
-  --c-gold-soft: 244 216 147; /* #F4D893 — highlight only */
-  --c-teal: 117 196 188;     /* #75C4BC — optional supporting accent */
-  --c-grid-line: 46 36 59;   /* #2E243B */
-  --c-selection-bg: 127 92 168; /* #7F5CA8 */
-}
 
 ::selection {
   background: rgb(var(--c-selection-bg));
@@ -73,9 +54,8 @@ html {
 body {
   background-color: rgb(var(--c-canvas));
   color: rgb(var(--c-ink));
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::-webkit-scrollbar {
