@@ -33,7 +33,7 @@ export const experience = [
     location: 'Palo Alto, CA',
     period: 'Jun 2026 - Present',
     bullets: [
-      'Traced a production bug in DevRev\'s Neuron agent engine (LangGraph, Temporal, gRPC) where a ChatOpenAI client silently dropped Anthropic thinking blocks, causing all extended-thinking traffic to skip the LLM gateway and disappear from per-request cost and token tracking across 7 regions. Fixed by switching to a native ChatAnthropic client on the gateway\'s Bedrock route behind a feature flag; validated end-to-end with integration tests covering streaming and sequential tool calls.',
+      'Traced a production bug in DevRev\'s Neuron agent engine (LangGraph, Temporal, gRPC) where a ChatOpenAI client silently dropped Anthropic thinking blocks, causing all extended-thinking traffic to skip the LLM gateway and disappear from per-request cost and token tracking across 7 regions. Fixed the issue by switching to a native ChatAnthropic client on the gateway\'s Bedrock route behind a feature flag. Validated the fix end-to-end with integration tests covering streaming and sequential tool calls.',
       'Built Kilmer\'s guardrail audit snap-in: pages through 500+ conversations per daily run in batches of 5, dispatches LLM breach-detection calls to AWS Bedrock with exponential-backoff retry, and auto-files structured security tickets for flagged system-prompt leaks.',
       'Built the bug-reporting pipeline: client-side log capture, presigned S3 artifact uploads, and automated DevRev ticket creation with session IDs, replacing manual log digging with structured agent trace replay.',
       'Implemented real-time speech-to-text for Kilmer using Deepgram\'s streaming WebSocket API, processing mic input in 250ms chunks with server-side token minting and extending it into a full voice conversation mode.',
@@ -118,7 +118,7 @@ export const projects = [
     bullets: [
       'Price-time priority matching engine: ~1.9M ops/sec, sub-microsecond latency (p50=0.4µs, p95=0.9µs).',
       'Live NASDAQ tick feed bridged via FastAPI into the C++ engine and broadcast over WebSocket to a React dashboard with real-time order book depth and trade tape.',
-      'Six GoogleTest cases covering FIFO ordering, market orders, multilevel fills, and cancel-after-fill; CMake build with a release profile targeting the performance numbers above.',
+      'Six GoogleTest cases covering FIFO ordering, market orders, multilevel fills, and cancel-after-fill. Built with CMake using a release profile targeting the performance numbers above.',
     ],
   },
   {
@@ -131,8 +131,8 @@ export const projects = [
     github: 'https://github.com/ad-kat/BBR-congestion-control-study',
     bullets: [
       'Rust CLI orchestrating reproducible Mininet experiments that characterize BBR\'s short-flow latency penalty under mixed workloads, extending Cao et al. (IMC 2019).',
-      'Two-level tc qdisc stack (HTB + netem) for precise bandwidth, delay, and buffer enforcement; compiled and loaded three custom Linux kernel modules (tcp_bbr_gain110/115/120.ko) to sweep pacing-gain variants across a 27-config grid.',
-      'Self-contained HTML report generator with vanilla JS/Canvas charts and zero external dependencies; full results and per-phase figures committed to the repo.',
+      'Two-level tc qdisc stack (HTB + netem) for precise bandwidth, delay, and buffer enforcement. Compiled and loaded three custom Linux kernel modules (tcp_bbr_gain110/115/120.ko) to sweep pacing-gain variants across a 27-config grid.',
+      'Self-contained HTML report generator with vanilla JS/Canvas charts and zero external dependencies. Committed full results and per-phase figures to the repo.',
     ],
   },
   {
@@ -146,7 +146,7 @@ export const projects = [
     bullets: [
       'Clinical NLP system detecting cross-encounter inconsistencies in MIMIC-IV EHR data (145,914 patients, 331,793 notes) under PhysioNet credentialed access with CITI human subjects certification.',
       'Knowledge distillation on 9,993 note pairs: a rule-based teacher labels a fine-tuned DistilBERT student with balanced class weighting and early stopping, reaching F1=0.868 (binary) and F1=0.856 (3-class macro) at 1.5ms with INT8 dynamic quantization, roughly 140x faster than the Groq/Llama-3.3-70b teacher.',
-      'Model deployed to HuggingFace Hub (ad-kat/clinical-contradiction-detector); FastAPI backend routes to local quantized weights in dev or the HF Inference API as a serverless production fallback, with a /classifier/info introspection endpoint and live interactive dashboard.',
+      'Model deployed to HuggingFace Hub (ad-kat/clinical-contradiction-detector). FastAPI routes to local quantized weights in development or the HF Inference API as a serverless production fallback, with a /classifier/info introspection endpoint and a live interactive dashboard',
     ],
   },
   {
@@ -159,8 +159,8 @@ export const projects = [
     github: 'https://github.com/ad-kat/cloud-resource-manager',
     bullets: [
       'Cloud governance REST API covering the full resource lifecycle (provisioning, policy enforcement, drift detection, cost tracking, deprovisioning) with live Azure Retail Pricing API rates refreshed every 6 hours, mirroring AWS Config and GCP Asset Inventory patterns.',
-      'Background scheduler auto-stops TTL-breached resources every 5 minutes and appends every state transition to an audit trail that is never overwritten; API keys are generated with secrets.token_urlsafe, stored SHA-256 hashed, and enforced via FastAPI dependency injection with per-key revocation.',
-      '14-test pytest suite in SQLite in-memory isolation wired to GitHub Actions CI; streamed CSV export for cost reports and full audit logs; Prometheus request count and p99 latency histograms at /metrics.',
+      'Background scheduler auto-stops TTL-breached resources every 5 minutes and appends every state transition to an audit trail that is never overwritten. API keys are generated with secrets.token_urlsafe, stored as SHA-256 hashes, and enforced through FastAPI dependency injection with per-key revocation.',
+      '14-test pytest suite using SQLite in-memory isolation and wired to GitHub Actions CI. Added streamed CSV export for cost reports and full audit logs, plus Prometheus request count and p99 latency histograms at /metrics.',
     ],
   },
   {
@@ -172,8 +172,8 @@ export const projects = [
     period: 'Apr 2026 - May 2026',
     github: 'https://github.com/ad-kat/osm-routing-engine',
     bullets: [
-      'Graph routing engine parsing OSM XML via StAX streaming into a spatial-indexed road graph (228 nodes, 849 edges) with O(1) nearest-node lookup; three travel profiles (DRIVING, WALKING, CYCLING) with per-road-type speeds and OSM no_turn restriction enforcement parsed from relation elements.',
-      'A* explored 97% fewer nodes than Dijkstra on cross-city routes while returning identical shortest paths; extended with isochrone computation (Dijkstra flood-fill and Graham-scan convex hull returning reachable-area GeoJSON polygons), k-alternative routes via edge-penalty A*, and multi-waypoint chained routing.',
+      'Graph routing engine parsing OSM XML through StAX streaming into a spatial-indexed road graph with 228 nodes and 849 edges, plus O(1) nearest-node lookup. Supports three travel profiles (DRIVING, WALKING, CYCLING) with per-road-type speeds and OSM no_turn restriction enforcement parsed from relation elements.',
+      'A* explored 97% fewer nodes than Dijkstra on cross-city routes while returning identical shortest paths. Extended the engine with isochrone computation using Dijkstra flood-fill and a Graham-scan convex hull for reachable-area GeoJSON polygons, k-alternative routes through edge-penalty A*, and multi-waypoint chained routing.',
       '11 JUnit tests covering graph structure, nearest-node lookup, algorithm correctness, and GeoJSON output, wired to GitHub Actions CI with a Docker image.',
     ],
   },
