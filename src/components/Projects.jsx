@@ -65,12 +65,12 @@ export default function Projects() {
                     </a>
                   )}
                 </div>
-                <span className="shrink-0 rounded-md border border-line bg-panel2 px-2 py-1 font-mono text-[10px] text-orchid">
+                <span className="shrink-0 rounded-md border border-line bg-panel2 px-2 py-1 font-mono text-xs text-orchid">
                   {p.metric}
                 </span>
               </div>
 
-              <p className="mt-1 font-mono text-[11px] text-mute">{p.stack}</p>
+              <p className="mt-1 font-mono text-xs text-mute">{p.stack}</p>
 
               {p.gif && (
                 <img
@@ -95,13 +95,13 @@ export default function Projects() {
                   {p.tags.map((t) => (
                     <span
                       key={t}
-                      className={`rounded-full border px-2.5 py-0.5 font-mono text-[10px] ${tagStyle[t]}`}
+                      className={`rounded-full border px-2.5 py-0.5 font-mono text-xs ${tagStyle[t]}`}
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <span className="font-mono text-[10px] text-mute">{p.period}</span>
+                <span className="font-mono text-xs text-mute">{p.period}</span>
               </div>
             </motion.div>
           ))}

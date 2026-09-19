@@ -1,78 +1,79 @@
-import { useState } from 'react'
+const strengths = [
+  {
+    title: 'I get productive in unfamiliar systems.',
+    body: 'At DevRev, I traced an LLM routing failure across LangGraph, Temporal, gRPC, model gateways, streaming, and provider APIs. I identified the client compatibility issue, shipped the fix behind a feature flag, and validated the affected flows with integration tests.',
+  },
+  {
+    title: 'I work across abstraction layers.',
+    body: 'My work spans C++ performance engineering, Rust and Linux networking, Python services, databases, AI infrastructure, and React interfaces. I can follow a problem across the stack instead of treating framework boundaries as handoffs.',
+  },
+  {
+    title: 'I build for production, not just the demo.',
+    body: 'I routinely add tests, retries, metrics, audit trails, caching, observability, and failure handling. I care about whether a system stays understandable and reliable after the first successful run.',
+  },
+]
 
-const pitches = [
+const fits = [
   {
-    label: 'SWE (Amazon, Google, Microsoft…)',
-    body: `I build things that work at scale and I understand what's happening under the hood. At DevRev, I traced a production bug across 7 regions in a live LangGraph + Temporal stack, fixed it behind a feature flag, and validated it end-to-end. I've shipped billing lifecycle integrations, real-time speech pipelines, and guardrail audit systems — not demos, production code.`,
+    title: 'Software and Product Engineering',
+    body: 'Backend services, APIs, integrations, customer facing features, debugging, and full stack ownership.',
   },
   {
-    label: 'Systems (Qualcomm, Nvidia, Broadcom…)',
-    body: `I understand hardware-adjacent systems, I work in C and C++, and I have published research touching signal processing and ML optimization. My graduate research combines YAMNet, WebRTC VAD, and Whisper at sub-400ms latency — that's a real-time DSP pipeline, not a notebook. I know what it means to optimize at the layer below the framework.`,
+    title: 'AI and Agent Infrastructure',
+    body: 'LLM routing, guardrails, agent workflows, model APIs, evaluation pipelines, streaming, and AI product features.',
   },
   {
-    label: 'Fintech (Intuit, PayPal, HSBC…)',
-    body: `I have built billing systems, compliance pipelines, and financial data infrastructure, and I understand what data integrity means in production. I integrated 8 Stripe API endpoints covering the full billing lifecycle, built an audit pipeline that pages through 500+ conversations with exponential-backoff retry, and auto-files structured security tickets for system-prompt leaks. I treat correctness as a hard constraint, not a nice-to-have.`,
+    title: 'Systems and Performance',
+    body: 'C++, Rust, Linux, networking, concurrency, profiling, latency sensitive systems, and performance measurement.',
+  },
+  {
+    title: 'Fintech and Data Systems',
+    body: 'Billing infrastructure, market systems, data pipelines, automation, analytics, and correctness sensitive workflows.',
   },
 ]
 
 export default function WhyHireMe() {
-  const [open, setOpen] = useState(false)
-  const [active, setActive] = useState(0)
-
   return (
-    <section className="mx-auto max-w-7xl px-6 py-10">
-      <div className="rounded-xl border-2 border-violet bg-panel px-8 py-8 text-center shadow-sm">
-        <p className="font-display text-xs uppercase tracking-widest text-mute mb-2">For Recruiters</p>
-        <h2 className="font-display text-3xl font-bold text-ink mb-3">Why You Should Hire Me</h2>
-        <p className="text-mute text-sm mb-6 max-w-xl mx-auto">
-          I don't just study systems — I ship them. Click below for the pitch tailored to your team.
-        </p>
-        <button
-          onClick={() => setOpen(true)}
-          className="rounded-md bg-violet px-7 py-3 font-display text-sm font-semibold text-canvas hover:bg-orchid transition-colors"
-        >
-          Read the Pitch →
-        </button>
+    <section className="mx-auto max-w-7xl px-6 py-20">
+      <p className="font-mono text-xs uppercase tracking-widest text-violet">what I bring</p>
+
+      <h2 className="mt-2 max-w-7xl font-display text-3xl font-semibold text-ink sm:text-4xl">
+        I learn quickly and follow problems across the stack.
+      </h2>
+
+      <p className="mt-4 max-w-7xl text-mute leading-relaxed">
+        I'm a new grad engineer who has already worked inside production systems, automated manual
+        workflows, and built performance sensitive software from C++ services to React interfaces.
+        I am most useful when a problem crosses boundaries and needs someone willing to understand
+        the system, find the real issue, and carry the solution through implementation and testing.
+      </p>
+
+      <div className="mt-10 grid gap-5 md:grid-cols-3">
+        {strengths.map((item) => (
+          <div key={item.title} className="rounded-lg border border-line bg-panel p-6">
+            <h3 className="font-display text-lg font-medium text-ink">{item.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-mute">{item.body}</p>
+          </div>
+        ))}
       </div>
 
-      {open && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-4"
-          onClick={() => setOpen(false)}
-        >
-          <div
-            className="relative w-full max-w-2xl rounded-xl border border-line bg-panel p-8 shadow-xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute right-4 top-4 text-mute hover:text-ink text-xl font-bold"
-              aria-label="Close"
-            >✕</button>
-
-            <h3 className="font-display text-2xl font-bold text-ink mb-1">Why You Should Hire Me</h3>
-            <p className="text-mute text-xs mb-5">Pick the track that matches your team:</p>
-
-            <div className="flex flex-wrap gap-2 mb-6">
-              {pitches.map((p, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className={`rounded-md border px-4 py-1.5 text-xs font-semibold transition-colors ${
-                    active === i
-                      ? 'border-violet bg-violet text-canvas'
-                      : 'border-line text-mute hover:border-violet hover:text-violet'
-                  }`}
-                >
-                  {p.label}
-                </button>
-              ))}
+      <div className="mt-12">
+        <p className="font-mono text-xs uppercase tracking-widest text-pink">where I can contribute</p>
+        <div className="mt-5 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+          {fits.map((item) => (
+            <div key={item.title} className="border-l-2 border-line pl-4">
+              <h3 className="font-display text-lg font-medium text-ink">{item.title}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-mute">{item.body}</p>
             </div>
-
-            <p className="text-ink leading-relaxed text-sm">{pitches[active].body}</p>
-          </div>
+          ))}
         </div>
-      )}
+      </div>
+
+      <p className="mt-10 max-w-7xl border-t border-line pt-6 text-sm text-mute">
+        As a 2027 new grad, I bring hands on experience with production software and a broad
+        technical base. I am looking for a team where I can contribute early, learn the system
+        deeply, and take on more ownership as I build context.
+      </p>
     </section>
   )
 }

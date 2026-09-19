@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Adri Katyayan',
-  role: 'Software Engineer · New Grad 2027 · AI/ML & Backend Systems',
-  tagline: 'AI/ML systems, distributed infra, and NLP. Built and shipped, not just studied.',
+    role: 'Software Engineer, New Grad 2027, Backend, AI, and Systems',
+  tagline: 'I build production software across AI infrastructure, backend systems, and performance sensitive applications.',
   email: 'adkatyayan@cs.stonybrook.edu',
   phone: '+1 (551) 312-9658',
   linkedin: 'https://www.linkedin.com/in/adri-katyayan/',
