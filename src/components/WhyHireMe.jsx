@@ -1,15 +1,15 @@
 const strengths = [
   {
-    title: 'I get productive in unfamiliar systems.',
-    body: 'At DevRev, I traced an LLM routing failure across LangGraph, Temporal, gRPC, model gateways, streaming, and provider APIs. I identified the client compatibility issue, shipped the fix behind a feature flag, and validated the affected flows with integration tests.',
+    title: 'I get productive in unfamiliar domains.',
+    body: 'I have worked across AI agents, supply-chain data, energy systems, healthcare, networking, and financial systems. I enjoy learning enough of the domain to understand the real constraint before deciding what to build.',
   },
   {
-    title: 'I work across abstraction layers.',
-    body: 'My work spans C++ performance engineering, Rust and Linux networking, Python services, databases, AI infrastructure, and React interfaces. I can follow a problem across the stack instead of treating framework boundaries as handoffs.',
+    title: 'I follow the problem across the stack.',
+    body: 'My work spans C++, Rust, Python, databases, AI infrastructure, and React. I am comfortable moving between data, backend, infrastructure, and UI when that is what the outcome requires.',
   },
   {
-    title: 'I build for production, not just the demo.',
-    body: 'I routinely add tests, retries, metrics, audit trails, caching, observability, and failure handling. I care about whether a system stays understandable and reliable after the first successful run.',
+    title: 'I own the path to production.',
+    body: 'I have debugged production failures, automated operational workflows, built customer-facing features, and added tests, retries, metrics, guardrails, and observability so systems keep working beyond the first successful run.',
   },
 ]
 
@@ -26,9 +26,9 @@ const fits = [
     title: 'Systems and Performance',
     body: 'C++, Rust, Linux, networking, concurrency, profiling, latency sensitive systems, and performance measurement.',
   },
-  {
-    title: 'Fintech and Data Systems',
-    body: 'Billing infrastructure, market systems, data pipelines, automation, analytics, and correctness sensitive workflows.',
+    {
+    title: 'Forward Deployed Engineering',
+    body: 'Ambiguous customer problems, rapid domain learning, data and application workflows, end-to-end ownership, and solutions built around real operational constraints.',
   },
 ]
 
@@ -38,14 +38,14 @@ export default function WhyHireMe() {
       <p className="font-mono text-xs uppercase tracking-widest text-violet">what I bring</p>
 
       <h2 className="mt-2 max-w-7xl font-display text-3xl font-semibold text-ink sm:text-4xl">
-        I learn quickly and follow problems across the stack.
+        I start with the problem, then go where it leads.
       </h2>
 
       <p className="mt-4 max-w-7xl text-mute leading-relaxed">
-        I'm a new grad engineer who has already worked inside production systems, automated manual
-        workflows, and built performance sensitive software from C++ services to React interfaces.
-        I am most useful when a problem crosses boundaries and needs someone willing to understand
-        the system, find the real issue, and carry the solution through implementation and testing.
+        I enjoy problems that begin with an unclear operational need rather than a neatly scoped
+        ticket. I like learning the domain, understanding what users actually need, breaking the
+        ambiguity into something measurable, and working across the stack until the solution works
+        under real constraints.
       </p>
 
       <div className="mt-10 grid gap-5 md:grid-cols-3">

@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Adri Katyayan',
-    role: 'Software Engineer, New Grad 2027, Backend, AI, and Systems',
-  tagline: 'I build production software across AI infrastructure, backend systems, and performance sensitive applications.',
+  role: 'Software Engineer, New Grad 2027 · Backend · AI · Systems · Forward Deployed Engineering',
+  tagline: 'I like owning ambiguous, real-world problems end to end, from understanding the domain and users to shipping production software across AI, backend, data, and UI.',
   email: 'adkatyayan@cs.stonybrook.edu',
   phone: '+1 (551) 312-9658',
   linkedin: 'https://www.linkedin.com/in/adri-katyayan/',
@@ -66,7 +66,7 @@ export const experience = [
     location: 'Bengaluru, India',
     period: 'Jan 2025 - Jun 2025',
     bullets: [
-      'Built 16 production web crawlers and an orchestration pipeline that auto-refreshes 600K+ price indices across 16 countries on schedule, replacing a full-time manual monthly process with a monitored batch run.',
+      'Built 16 production web crawlers for the Supply Chain, Cost & Prices team and an orchestration pipeline that auto-refreshes 600K+ price indices across 16 countries, replacing a full-time manual monthly process with a monitored batch run.',
       'Migrated the Labor Market Trends dashboard from Excel to a PostgreSQL star schema with 3 relational tables and batch ETL pipelines, cutting p95 query latency ~58% (900ms to 380ms) for direct-query Power BI integration.',
       'Built a 7-feature Power BI quality-check dashboard (DAX) monitoring ingestion health, duplicate detection, and data coverage across 4,992 tracked indices.',
       'Containerized the ETL pipeline (Docker) with data-quality checks and anomaly detection, reducing silent failures across ingestion workflows.',
