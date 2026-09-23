@@ -18,6 +18,7 @@ export default {
         gold: 'rgb(var(--c-gold) / <alpha-value>)',
         'gold-soft': 'rgb(var(--c-gold-soft) / <alpha-value>)',
       },
+      borderRadius: { md: '0', lg: '0', full: '0' },
       fontFamily: {
         display: ['"Times New Roman"', 'Times', 'serif'],
         body: ['"Times New Roman"', 'Times', 'serif'],
